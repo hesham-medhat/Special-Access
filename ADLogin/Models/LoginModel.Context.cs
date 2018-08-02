@@ -12,6 +12,8 @@ namespace ADLogin.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class LoginDBEntities : DbContext
     {
@@ -26,5 +28,18 @@ namespace ADLogin.Models
         }
     
         public virtual DbSet<user> users { get; set; }
+    
+        public virtual int validateUserByUP(string username, string password)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("validateUserByUP", usernameParameter, passwordParameter);
+        }
     }
 }

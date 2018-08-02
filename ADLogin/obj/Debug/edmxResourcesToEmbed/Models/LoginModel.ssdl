@@ -7,7 +7,7 @@
     <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <Function Name="validateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+  <Function Name="validateUserByUP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="username" Type="varchar" Mode="In" />
     <Parameter Name="password" Type="varchar" Mode="In" />
   </Function>

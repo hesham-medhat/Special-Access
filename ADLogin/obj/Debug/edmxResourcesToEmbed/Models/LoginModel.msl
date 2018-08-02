@@ -9,5 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="validateUserByUP" FunctionName="LoginDBModel.Store.validateUserByUP" />
   </EntityContainerMapping>
 </Mapping>

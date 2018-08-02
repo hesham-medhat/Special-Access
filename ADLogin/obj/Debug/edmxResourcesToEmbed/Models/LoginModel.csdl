@@ -9,5 +9,9 @@
   </EntityType>
   <EntityContainer Name="LoginDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="users" EntityType="Self.user" />
+    <FunctionImport Name="validateUserByUP">
+      <Parameter Name="username" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>
