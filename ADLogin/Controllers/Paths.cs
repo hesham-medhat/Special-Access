@@ -7,8 +7,8 @@ namespace ADLogin.Controllers
 {
     public static class Paths
     {
-        private static string _loginPath = "~/Login/Index";
-        private static string _welcomePath = "~/Home/Welcome";
+        private static readonly string _loginPath = "~/Login/Index";
+        private static readonly string _welcomePath = "~/Home/Welcome";
 
         public static string GetLoginPath()
         {
